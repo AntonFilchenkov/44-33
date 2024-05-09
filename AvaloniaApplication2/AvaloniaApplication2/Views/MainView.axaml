@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication2.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication2.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<DockPanel>
+		<Grid DockPanel.Dock="Top" Height="50">
+			<StackPanel Orientation="Horizontal"  Background="Green" >
+				<Button Content="Home" Margin="1"> </Button>
+				<Button Content="About" Margin="1"> </Button>
+				<Button Content="Blog's Main Topic 1" Margin="1"> </Button>
+				<Button Content="Blog's Main Topic 2" Margin="1"> </Button>
+				<Button Content="Blog's Main Topic 3" Margin="1"> </Button>
+				<Button Content="Associated blogs" Margin="1"> </Button>
+
+				
+			</StackPanel>
+			<Button Content="RSS" Margin="1" HorizontalAlignment="Right"> </Button>
+		</Grid>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Border Background="Red" Grid.Column="0">
+				<Grid> 
+					<StackPanel Margin="10">
+						<TextBlock Text="Что такое Lorem Ipsum?"/>
+						<TextBlock Text="Lorem Ipsum - это текст-рыба, часто используемый в печати и вэб-дизайне."/>
+						<Image Source="C:\Users\Anfil\source\repos\AvaloniaApplication2\AvaloniaApplication2\Assets\logo.png" Height="200" Width="200"/>
+						
+					</StackPanel>
+					<Grid VerticalAlignment="Bottom" Margin="10">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Tags: " VerticalAlignment="Center"></TextBlock>
+							<Button Content="Tag 1" Margin="10"> </Button>
+							<Button Content="Tag 2" Margin="10"> </Button>
+							<Button Content="Tag 3" Margin="10"> </Button>
+							<Button Content="Tag 4" Margin="10"> </Button>
+							</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<TextBlock Text="Rate this article:  " HorizontalAlignment="" VerticalAlignment="Center"></TextBlock>
+							<Image Height="100" Width="100" Source="C:\Users\Anfil\source\repos\AvaloniaApplication2\AvaloniaApplication2\Assets\star.png" />
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</Border>
+			<Border Background="Blue" Grid.Column="1">
+				<StackPanel Orientation="Vertical">
+					
+					<StackPanel Orientation="Vertical" Margin="10">
+						<TextBlock Text="qwer"> </TextBlock>
+						<Button Content="More: " HorizontalAlignment="Right"> </Button>
+						
+						<TextBlock Text="yesterday" HorizontalAlignment="Right"> </TextBlock>
+
+					</StackPanel>
+					<StackPanel Orientation="Vertical" Margin="10">
+						<TextBlock Text="qwer"> </TextBlock>
+						<Button Content="More: " HorizontalAlignment="Right"> </Button>
+
+						<TextBlock Text="1 week ago" HorizontalAlignment="Right"> </TextBlock>
+
+					</StackPanel>
+				</StackPanel>
+			</Border>
+		</Grid>
+		</DockPanel>
+	
+	<!--TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/ -->
+</UserControl>
